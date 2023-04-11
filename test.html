@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <!--Made by Subham-->
+      <div class="heart">
+    </div>
+</body>
+ <div id="countdown"></div>
+    <script src="script.js"></script>
+<div class="ggne">Би дукад хайртай</div>
+</html>
+<style>
+    body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    background: #262626;
+}
+.heart {
+    position: absolute;
+    top: 20%;
+    width: 100px;
+    height: 100px;
+    background: red;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 120px red;
+    animation: heart 0.6s linear infinite;
+}
+.ggne{
+    position: absolute;
+    color: white;
+    top: 85%;
+}
+@keyframes heart {
+    0% {
+        transform: rotate(-45deg) scale(1.07);
+    }
+    100% {
+        transform: rotate(-45deg) scale(1.0);
+    }
+    100% {
+        transform: rotate(-45deg) scale(0.8);
+    }
+    
+}
+.heart::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: red;
+    top: -50%;
+    border-radius: 60px;
+    box-shadow: -10px 10px 120px red;
+}
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: red;
+    right: -50%;
+    border-radius: 60px;
+    box-shadow: -10px 10px 120px red;
+}
+ #countdown {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+</style>
+<script type="text/javascript">
+var countDownDate = new Date("February 26, 2023 00:00:00").getTime();
+
+// Update the countdown every second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the countdown date
+  var distance = now - countDownDate;
+
+  // Calculate the days, hours, minutes, and seconds left
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the countdown in the element with id="countdown"
+  document.getElementById("countdown").innerHTML = days + " өдөр " + hours + " цаг "
+  + minutes + " минут " + seconds + " секунд ";
+
+}, 1000);
+</script> 
